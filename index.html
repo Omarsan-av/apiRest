@@ -24,16 +24,53 @@
          box-sizing: border-box;
          display: grid;
          gap: 20px;
-         grid-template-columns: repeat(3, 1fr);
+         grid-template-columns: repeat(5, 1fr);
          width: 100%;
+      }
+
+      .item 
+      {
+         position: relative;
       }
 
       .img 
       {
          border-radius: 20px;
-         height: 500px;
+         height: 250px;
          object-fit: cover;
          width: 100%;
+      }
+
+      .like 
+      {
+         cursor: pointer;
+         width: 50px;
+         height: 50px;
+         background-image: url('corazon.png');
+         background-size: 1450px 50px;
+         position: absolute;
+         transform: scale(1.3);
+         top: 0;
+         right: 0;
+      }
+         
+      .like.is-liked
+      {
+         animation-name: like;
+         animation-duration: .8s;
+         animation-timing-function: steps(28);
+         animation-fill-mode: forwards;
+      }
+      @keyframes like 
+      {
+         0%
+            {
+               background-position: 0 0;
+            }    
+            100%
+            {
+               background-position: right;
+            }
       }
 
    </style>
@@ -41,12 +78,68 @@
 <body>
    <h1>Gatitos Aleatorios</h1>
    <div class="container">
-      <img class ="img" alt="Foto Gatito">
-      <img class ="img" alt="Foto Gatito">
-      <img class ="img" alt="Foto Gatito">
+      <div class="item">
+         <img class ="img" alt="Foto Gatito">
+         <div class="like"></div>
+      </div>
+
+      <div class="item">
+         <img class ="img" alt="Foto Gatito">
+         <div class="like"></div>
+      </div>
+
+      <div class="item">
+         <img class ="img" alt="Foto Gatito">
+         <div class="like"></div>
+      </div>
+
+      <div class="item">
+         <img class ="img" alt="Foto Gatito">
+         <div class="like"></div>
+      </div>
+
+      <div class="item">
+         <img class ="img" alt="Foto Gatito">
+         <div class="like"></div>
+      </div>
+
+      <div class="item">
+         <img class ="img" alt="Foto Gatito">
+         <div class="like"></div>
+      </div>
+
+      <div class="item">
+         <img class ="img" alt="Foto Gatito">
+         <div class="like"></div>
+      </div>
+
+      <div class="item">
+         <img class ="img" alt="Foto Gatito">
+         <div class="like"></div>
+      </div>
+
+      <div class="item">
+         <img class ="img" alt="Foto Gatito">
+         <div class="like"></div>
+      </div>
+
+      <div class="item">
+         <img class ="img" alt="Foto Gatito">
+         <div class="like"></div>
+      </div>
    </div>
 
    <button onclick="reload()">Recargar</button>
    <script src="./main.js"></script>
+   <script>
+      const favorite = document.getElementsByClassName('like');
+
+      for(let i=0; i<favorite.length; i++)
+      {
+         favorite[i].addEventListener('click', ()=>{
+             favorite[i].classList.toggle('is-liked');
+         });
+      }
+  </script>
 </body>
 </html>

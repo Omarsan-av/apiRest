@@ -1,5 +1,5 @@
 const api_key = '262e0c1f-538d-4f3f-86ed-29e15a0ad7d1';
-const API_URL = `https://api.thecatapi.com/v1/images/search?limit=3&${api_key}`;
+const API_URL = `https://api.thecatapi.com/v1/images/search?limit=10&${api_key}`;
 const img = document.getElementsByClassName('img');
 
 // fetch (URL)
