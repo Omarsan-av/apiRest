@@ -1,69 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>gAtitos Aleatorios</title>
-   <style>
-      *
-      {
-         margin: 0;
-         padding: 0;
-      }
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>gAtitos Aleatorios</title>
+      <style>
+         *
+         {
+            margin: 0;
+            padding: 0;
+         }
 
-      body 
-      {
-         background-color: #e9cb71;
-         box-sizing: border-box;
-         padding: 0 20px;
-         width: 100vw;
-      }
-      .container
-      {
-         box-sizing: border-box;
-         display: grid;
-         gap: 20px;
-         grid-template-columns: repeat(5, 1fr);
-         width: 100%;
-      }
+         body 
+         {
+            background-color: #e9cb71;
+            box-sizing: border-box;
+            padding: 0 20px;
+            width: 100vw;
+         }
 
-      .item 
-      {
-         position: relative;
-      }
+         .container
+         {
+            box-sizing: border-box;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(5, 1fr);
+            width: 100%;
+         }
 
-      .img 
-      {
-         border-radius: 20px;
-         height: 250px;
-         object-fit: cover;
-         width: 100%;
-      }
+         .item 
+         {
+            position: relative;
+         }
 
-      .like 
-      {
-         cursor: pointer;
-         width: 50px;
-         height: 50px;
-         background-image: url('corazon.png');
-         background-size: 1450px 50px;
-         position: absolute;
-         transform: scale(1.3);
-         top: 0;
-         right: 0;
-      }
-         
-      .like.is-liked
-      {
-         animation-name: like;
-         animation-duration: .8s;
-         animation-timing-function: steps(28);
-         animation-fill-mode: forwards;
-      }
-      @keyframes like 
-      {
-         0%
+         .img 
+         {
+            border-radius: 20px;
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+         }
+
+         .like 
+         {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            background-image: url('corazon.png');
+            background-size: 1450px 50px;
+            position: absolute;
+            transform: scale(1.8);
+            top: 5px;
+            right: 5px;
+         }
+            
+         .like.is-liked
+         {
+            animation-name: like;
+            animation-duration: .8s;
+            animation-timing-function: steps(28);
+            animation-fill-mode: forwards;
+         }
+
+         @keyframes like 
+         {
+            0%
             {
                background-position: 0 0;
             }    
@@ -71,75 +73,70 @@
             {
                background-position: right;
             }
-      }
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Gatitos Aleatorios</h1>
 
-   </style>
-</head>
-<body>
-   <h1>Gatitos Aleatorios</h1>
-   <div class="container">
-      <div class="item">
-         <img class ="img" alt="Foto Gatito">
-         <div class="like"></div>
-      </div>
+      <span id="error"></span>
 
-      <div class="item">
-         <img class ="img" alt="Foto Gatito">
-         <div class="like"></div>
-      </div>
-
-      <div class="item">
-         <img class ="img" alt="Foto Gatito">
-         <div class="like"></div>
-      </div>
-
-      <div class="item">
-         <img class ="img" alt="Foto Gatito">
-         <div class="like"></div>
-      </div>
-
-      <div class="item">
-         <img class ="img" alt="Foto Gatito">
-         <div class="like"></div>
-      </div>
-
-      <div class="item">
-         <img class ="img" alt="Foto Gatito">
-         <div class="like"></div>
-      </div>
-
-      <div class="item">
-         <img class ="img" alt="Foto Gatito">
-         <div class="like"></div>
-      </div>
-
-      <div class="item">
-         <img class ="img" alt="Foto Gatito">
-         <div class="like"></div>
-      </div>
-
-      <div class="item">
-         <img class ="img" alt="Foto Gatito">
-         <div class="like"></div>
-      </div>
-
-      <div class="item">
-         <img class ="img" alt="Foto Gatito">
-         <div class="like"></div>
-      </div>
-   </div>
-
-   <button onclick="reload()">Recargar</button>
-   <script src="./main.js"></script>
-   <script>
-      const favorite = document.getElementsByClassName('like');
-
-      for(let i=0; i<favorite.length; i++)
-      {
-         favorite[i].addEventListener('click', ()=>{
-             favorite[i].classList.toggle('is-liked');
-         });
-      }
-  </script>
-</body>
+      <section>
+         <div class="container">
+            <div class="item">
+               <img class ="img" alt="Foto Gatito">
+            </div>
+      
+            <div class="item">
+               <img class ="img" alt="Foto Gatito">
+            </div>
+      
+            <div class="item">
+               <img class ="img" alt="Foto Gatito">
+            </div>
+      
+            <div class="item">
+               <img class ="img" alt="Foto Gatito">
+            </div>
+      
+            <div class="item">
+               <img class ="img" alt="Foto Gatito">
+            </div>
+      
+            <div class="item">
+               <img class ="img" alt="Foto Gatito">
+            </div>
+      
+            <div class="item">
+               <img class ="img" alt="Foto Gatito">
+            </div>
+      
+            <div class="item">
+               <img class ="img" alt="Foto Gatito">
+            </div>
+      
+            <div class="item">
+               <img class ="img" alt="Foto Gatito">
+            </div>
+      
+            <div class="item">
+               <img class ="img" alt="Foto Gatito">
+            </div>
+         </div>
+      
+         <button onclick="loadRandomCats()">Recargar</button>
+      </section>
+         
+      <section  id="favoriteCat">
+         <!-- <article>
+            <h2>Cats Favorites</h2>
+            <img id="img1" alt="">
+            <button>Eliminar</button>
+         </article> -->
+      </section>
+      <script src="./main.js"></script>
+      <script>
+         
+      </script>
+   </body>
 </html>
