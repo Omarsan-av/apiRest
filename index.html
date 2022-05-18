@@ -5,76 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>gAtitos Aleatorios</title>
-      <style>
-         *
-         {
-            margin: 0;
-            padding: 0;
-         }
-
-         body 
-         {
-            background-color: #e9cb71;
-            box-sizing: border-box;
-            padding: 0 20px;
-            width: 100vw;
-         }
-
-         .container
-         {
-            box-sizing: border-box;
-            display: grid;
-            gap: 20px;
-            grid-template-columns: repeat(5, 1fr);
-            width: 100%;
-         }
-
-         .item 
-         {
-            position: relative;
-         }
-
-         .img 
-         {
-            border-radius: 20px;
-            height: 250px;
-            object-fit: cover;
-            width: 100%;
-         }
-
-         .like 
-         {
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            background-image: url('corazon.png');
-            background-size: 1450px 50px;
-            position: absolute;
-            transform: scale(1.8);
-            top: 5px;
-            right: 5px;
-         }
-            
-         .like.is-liked
-         {
-            animation-name: like;
-            animation-duration: .8s;
-            animation-timing-function: steps(28);
-            animation-fill-mode: forwards;
-         }
-
-         @keyframes like 
-         {
-            0%
-            {
-               background-position: 0 0;
-            }    
-            100%
-            {
-               background-position: right;
-            }
-         }
-      </style>
+      <link rel="stylesheet" href="css/styles.css">
    </head>
    <body>
       <h1>Gatitos Aleatorios</h1>
@@ -127,16 +58,19 @@
          <button onclick="loadRandomCats()">Recargar</button>
       </section>
          
-      <section  id="favoriteCat">
-         <!-- <article>
-            <h2>Cats Favorites</h2>
-            <img id="img1" alt="">
-            <button>Eliminar</button>
-         </article> -->
+      <h2>Cats Favorites</h2>
+      <section  id="favoriteCat" class="container"></section>
+
+      <section id="uploadingCat">
+         <h2>Sube la foto de tu michi</h2>
+
+         <form id="uploadingForm">
+            <input id="selectFiles" type="file" name="file">
+            <button type="button" onclick="uploadCatPhoto()">Subir foto de michi</button>
+            <img id="catPhotoPreview" class="preview">
+         </form>
       </section>
-      <script src="./main.js"></script>
-      <script>
-         
-      </script>
+      <script src="js/main.js"></script>
+      <script src="js/catPhotoPreview.js"></script>
    </body>
 </html>

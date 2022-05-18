@@ -1,0 +1,75 @@
+*
+{
+   margin: 0;
+   padding: 0;
+}
+
+body 
+{
+   background-color: #e9cb71;
+   box-sizing: border-box;
+   padding: 0 20px;
+}
+
+.container
+{
+   box-sizing: border-box;
+   display: grid;
+   gap: 20px;
+   grid-template-columns: repeat(5, 1fr);
+   width: 100%;
+}
+
+.item 
+{
+   position: relative;
+}
+
+.img, article img
+{
+   border-radius: 20px;
+   height: 250px;
+   object-fit: cover;
+   width: 100%;
+}
+
+.preview
+{
+   border-radius: 20px;
+   height: 250px;
+   object-fit: cover;
+   width: 246.2px;
+}
+
+.like 
+{
+   cursor: pointer;
+   width: 50px;
+   height: 50px;
+   background-image: url('../icons/corazon.png');
+   background-size: 1450px 50px;
+   position: absolute;
+   transform: scale(1.8);
+   top: 5px;
+   right: 5px;
+}
+   
+.like.is-liked
+{
+   animation-name: like;
+   animation-duration: .8s;
+   animation-timing-function: steps(28);
+   animation-fill-mode: forwards;
+}
+
+@keyframes like 
+{
+   0%
+   {
+      background-position: 0 0;
+   }    
+   100%
+   {
+      background-position: right;
+   }
+}
