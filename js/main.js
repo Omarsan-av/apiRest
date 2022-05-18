@@ -80,7 +80,7 @@ async function loadFavoriteCat()
          const btnDelete = document.createElement('button');
          const imgDelete = document.createElement('img');
 
-         imgDelete.src = '../icons/icons8-basura.gif';
+         imgDelete.src = '../icons/trash.gif';
          imgDelete.className = 'img-delete';
          btnDelete.className = 'btn-delete';
          btnDelete.onclick = () => deleteFavoriteCat(cat.id);
