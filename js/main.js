@@ -22,14 +22,18 @@ async function loadRandomCats()
    {
       for(let i = 0; i < imageCat.length; i++)
       {
+         let containerButtonLike = document.createElement('div');
          let buttonLike = document.createElement('div');
+         
+         containerButtonLike.className = 'containerButtonLike';
+         containerButtonLike.appendChild(buttonLike);
          buttonLike.className = 'like';
          imageCat[i].src = data[i].url;
-         item[i].appendChild(buttonLike);
+         item[i].appendChild(containerButtonLike);
          
          buttonLike.addEventListener('click', ()=>
          {
-            if(contClick === 1 && deleteId === data[i].id)
+            if( contClick === 1 )
             {
                contClick = 0;
                buttonLike.classList.remove('is-liked');
@@ -40,6 +44,7 @@ async function loadRandomCats()
                contClick = 1;
                saveFavoriteCat( data[i].id );
                buttonLike.classList.add('is-liked');
+               // containerButtonLike.style.backgroundColor = 'white';
                console.log(`Guardando contador = ${contClick}`)
             }
          });
@@ -72,14 +77,17 @@ async function loadFavoriteCat()
       {
          const article = document.createElement('article');
          const img = document.createElement('img');
-         const btn = document.createElement('button');
-         const btnText = document.createTextNode('Eliminar');
-         
-         btn.onclick = () => deleteFavoriteCat(cat.id);
+         const btnDelete = document.createElement('button');
+         const imgDelete = document.createElement('img');
+
+         imgDelete.src = '../icons/icons8-basura.gif';
+         imgDelete.className = 'img-delete';
+         btnDelete.className = 'btn-delete';
+         btnDelete.onclick = () => deleteFavoriteCat(cat.id);
          img.src = cat.image.url;
-         btn.appendChild(btnText);
+         btnDelete.appendChild(imgDelete);
          article.className = 'item';
-         article.append(img, btn);
+         article.append(img, btnDelete);
          section.appendChild(article);
       })
    }
