@@ -1,5 +1,5 @@
 const api_key = '262e0c1f-538d-4f3f-86ed-29e15a0ad7d1';
-const API_URL_RANDOM = `https://api.thecatapi.com/v1/images/search?limit=10`;
+const API_URL_RANDOM = `https://api.thecatapi.com/v1/images/search?limit=20&page=0`;
 const API_URL_FAVORITES = `https://api.thecatapi.com/v1/favourites`;
 const API_URL_UPLOAD = `https://api.thecatapi.com/v1/images/upload`;
 const imageCat = document.getElementsByClassName('img');
@@ -44,7 +44,6 @@ async function loadRandomCats()
                contClick = 1;
                saveFavoriteCat( data[i].id );
                buttonLike.classList.add('is-liked');
-               // containerButtonLike.style.backgroundColor = 'white';
                console.log(`Guardando contador = ${contClick}`)
             }
          });
