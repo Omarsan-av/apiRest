@@ -1,10 +1,11 @@
 const api_key = '262e0c1f-538d-4f3f-86ed-29e15a0ad7d1';
-const API_URL_RANDOM = `https://api.thecatapi.com/v1/images/search?limit=20&page=0`;
+const itemsForPage = 20;
+const API_URL_RANDOM = `https://api.thecatapi.com/v1/images/search?limit=${itemsForPage}&page=0`;
 const API_URL_FAVORITES = `https://api.thecatapi.com/v1/favourites`;
 const API_URL_UPLOAD = `https://api.thecatapi.com/v1/images/upload`;
-const imageCat = document.getElementsByClassName('img');
+const container = document.getElementById('container')
+// const imageCat = document.getElementsByClassName('img');
 const spanError = document.getElementById('error');
-const item = document.getElementsByClassName('item');
 let contClick = 0;
 let deleteId;
 
@@ -12,7 +13,7 @@ async function loadRandomCats()
 {
    const response = await fetch(API_URL_RANDOM);
    const data = await response.json();
-      
+   
    if(response.status !== 200)
    {
       spanError.innerHTML = "Hubo un error 1" + response.status;
@@ -20,16 +21,22 @@ async function loadRandomCats()
    
    else 
    {
-      for(let i = 0; i < imageCat.length; i++)
+      for(let i = 0; i < itemsForPage; i++)
       {
+         const item = document.createElement('div');
+         const photoCat = document.createElement('img');
          let containerButtonLike = document.createElement('div');
          let buttonLike = document.createElement('div');
          
+         item.className = 'item';
+         photoCat.className = 'img';
          containerButtonLike.className = 'containerButtonLike';
-         containerButtonLike.appendChild(buttonLike);
          buttonLike.className = 'like';
-         imageCat[i].src = data[i].url;
-         item[i].appendChild(containerButtonLike);
+         containerButtonLike.appendChild(buttonLike);
+         // imageCat[i].src = data[i].url;
+         photoCat.src = data[i].url;
+         item.append(photoCat, containerButtonLike);
+         container.append(item);
          
          buttonLike.addEventListener('click', ()=>
          {
