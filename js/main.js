@@ -4,14 +4,13 @@ const API_URL_RANDOM = `https://api.thecatapi.com/v1/images/search?limit=${items
 const API_URL_FAVORITES = `https://api.thecatapi.com/v1/favourites`;
 const API_URL_UPLOAD = `https://api.thecatapi.com/v1/images/upload`;
 const container = document.getElementById('container')
-// const imageCat = document.getElementsByClassName('img');
 const spanError = document.getElementById('error');
 let contClick = 0;
 let deleteId;
 
-async function loadRandomCats()
+async function loadRandomCats(page = 1)
 {
-   const response = await fetch(API_URL_RANDOM);
+   const response = await fetch(`${API_URL_RANDOM}&page=${page}`);
    const data = await response.json();
    
    if(response.status !== 200)
@@ -21,7 +20,9 @@ async function loadRandomCats()
    
    else 
    {
-      for(let i = 0; i < itemsForPage; i++)
+      container.innerHTML = "";
+
+      for( let i = 0; i < itemsForPage; i++ )
       {
          const item = document.createElement('div');
          const photoCat = document.createElement('img');
@@ -33,7 +34,6 @@ async function loadRandomCats()
          containerButtonLike.className = 'containerButtonLike';
          buttonLike.className = 'like';
          containerButtonLike.appendChild(buttonLike);
-         // imageCat[i].src = data[i].url;
          photoCat.src = data[i].url;
          item.append(photoCat, containerButtonLike);
          container.append(item);
@@ -179,8 +179,8 @@ async function uploadCatPhoto()
    {
       console.log("Foto de michi cargada :)");
       console.log({ data });
-      saveFavoriteCat(data.id) //para agregar el michi cargado a favoritos.
+      saveFavoriteCat(data.id);
    }
 }
 
-loadRandomCats();
+loadRandomCats(`${page}`);

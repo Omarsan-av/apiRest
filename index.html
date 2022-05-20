@@ -12,9 +12,15 @@
       <span id="error"></span>
 
       <section>
-         <div class="container" id="container"></div>
-      
-         <button onclick="loadRandomCats()">Recargar</button>
+         <div class="container" id="container">
+         </div>
+         
+         <div class="buttons">
+            <button id="btnPrevious" class="buttons__pagination">Anterior</button>
+            <button id="btnNext" class="buttons__pagination">Siguiente</a></button>
+            <button class="up"><a href="#">Inicio</a></button>
+         </div>
+         <!-- <button onclick="loadRandomCats()">Recargar</button> -->
       </section>
          
       <h2 class="title">Mis Favoritos</h2>
@@ -29,6 +35,7 @@
             <img id="catPhotoPreview" class="preview">
          </form>
       </section>
+      <script src="js/pagination.js"></script>
       <script src="js/main.js"></script>
       <script src="js/catPhotoPreview.js"></script>
    </body>
