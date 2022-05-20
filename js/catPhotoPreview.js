@@ -16,5 +16,4 @@ selectFiles.addEventListener("change", () =>
       const objectURL = URL.createObjectURL(firstFile);
    // Y a la fuente de la imagen le ponemos el objectURL
       catPhotoPreview.src = objectURL;
-      catPhotoPreview.style.display = 'block'
 });
