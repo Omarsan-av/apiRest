@@ -27,12 +27,12 @@
       <section  id="favoriteCat" class="container"></section>
 
       <section id="uploadingCat">
-         <h2>Sube la foto de tu michi</h2>
+         <h2 class="title">Sube la foto de tu michi</h2>
 
          <form id="uploadingForm">
             <input id="selectFiles" type="file" name="file">
-            <button type="button" onclick="uploadCatPhoto()">Sube foto de tu michi</button>
             <img id="catPhotoPreview" class="preview">
+            <button type="button" onclick="uploadCatPhoto()" class="uploadPhoto" disabled>Subir foto</button>
          </form>
       </section>
       <script src="js/pagination.js"></script>

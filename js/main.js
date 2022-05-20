@@ -44,6 +44,7 @@ async function loadRandomCats(page = 1)
             {
                contClick = 0;
                buttonLike.classList.remove('is-liked');
+               containerButtonLike.style.backgroundColor = '#d34f4f';
                deleteFavoriteCat(deleteId);
             }
             else
@@ -51,6 +52,7 @@ async function loadRandomCats(page = 1)
                contClick = 1;
                saveFavoriteCat( data[i].id );
                buttonLike.classList.add('is-liked');
+               containerButtonLike.style.backgroundColor = 'white';
                console.log(`Guardando contador = ${contClick}`)
             }
          });

@@ -56,7 +56,6 @@ body
 
 .preview
 {
-   border-radius: 20px;
    height: 250px;
    object-fit: cover;
    width: 246.2px;
@@ -64,14 +63,13 @@ body
 
 .containerButtonLike
 {
-   background-color: white;
+   background-color: #d34f4f;
    width: 36px;
    height: 36px;
    border-radius: 50%;
    position: absolute;
    top: 10px;
    right: 10px;
-   box-shadow: 0px 0px 8px #6a6767;
 }
 
 .like 
@@ -194,4 +192,29 @@ body
    display: flex;
    justify-content: center;
    align-items: center;
+}
+
+input[type="file"] 
+{
+   color: white;
+   font-size: 20px;
+   margin-bottom: 30px;
+   display: block;
+   width: 100%;
+}
+
+#uploadingForm
+{
+   margin: 40px 0 30px;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+}
+
+.uploadPhoto
+{
+   height: 35px;
+   padding: 0 15px;
+   font-size: 20px;
+   margin-left: 50px;
 }
